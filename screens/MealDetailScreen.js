@@ -7,7 +7,7 @@ function MealDetailScree({route, navigation}) {
     const mealId = route.params.mealId
 
     const selectedMeal = MEALS.find((meal) => meal.id === mealId)
-
+    console.log('seleected meal')
     return(
         <ScrollView>
             <Image style={styles.image} source={{ uri: selectedMeal.imageUrl }} />
@@ -19,7 +19,7 @@ function MealDetailScree({route, navigation}) {
             />
             <View>
                 <Text style={styles.subtitle}>Ingredients</Text>
-                {selectedMeal.ingredients.map(ingredients => <Text style={styles.textContent} key={ingredients}>{ingredients}</Text>)}
+                {selectedMeal.estadisticas.map(estadisticas => <Text key={estadisticas}>{estadisticas}</Text>)}
                 <Text style={styles.subtitle}>Steps</Text>
                 {selectedMeal.steps.map(step => <Text style={styles.textContent} key={step}>{step}</Text>)}
             </View>
